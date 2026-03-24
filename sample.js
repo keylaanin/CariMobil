@@ -1,0 +1,32 @@
+const products = [
+  {
+    id: 1,
+    name: "Toyota Avanza",
+    year: 2020,
+    km: "45.000",
+    transmission: "Manual",
+    price: "168",
+    badge: "Baru Masuk",
+    image: "assets/toyota-avanza-2020.jpg",
+  },
+  {
+    id: 2,
+    name: "Honda Jazz RS",
+    year: 2019,
+    km: "38.000",
+    transmission: "Matic",
+    price: "195",
+    badge: null,
+    image: "assets/honda-jazz-rs-2019.jpg",
+  },
+  {
+    id: 3,
+    name: "Suzuki Ertiga",
+    year: 2021,
+    km: "28.000",
+    transmission: "Matic",
+    price: "210",
+    badge: "Populer",
+    image: "assets/suzuki-ertiga-2021.webp",
+  },
+];
