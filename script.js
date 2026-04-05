@@ -37,3 +37,43 @@ function renderProducts() {
 }
 
 document.addEventListener("DOMContentLoaded", renderProducts);
+
+// Fitur Kirim Email
+const contactForm = document.getElementById('contact-form');
+const btnSubmit = document.getElementById('btn-submit');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Ubah teks tombol saat loading
+    btnSubmit.innerText = 'Mengirim...';
+    btnSubmit.disabled = true;
+
+    emailjs.sendForm('service_9l1p7h8', 'template_dmsr96u', this)
+      .then(function() {
+        Swal.fire({
+          title: 'Berhasil!',
+          text: 'Pesan berhasil terkirim! Kami akan segera menghubungi Anda.',
+          icon: 'success',
+          confirmButtonText: 'Oke',
+          confirmButtonColor: '#ff6b00' // Sesuaikan dengan warna brand CariMobil
+        });
+
+        contactForm.reset();
+        btnSubmit.innerText = 'Kirim Pesan';
+        btnSubmit.disabled = false;
+      }, function(error) {
+        Swal.fire({
+          title: 'Gagal!',
+          text: 'Maaf, terjadi kesalahan. Silakan coba lagi nanti.',
+          icon: 'error',
+          confirmButtonText: 'Coba Lagi'
+        });
+
+        console.log('FAILED...', error);
+        btnSubmit.innerText = 'Kirim Pesan';
+        btnSubmit.disabled = false;
+      });
+  });
+}

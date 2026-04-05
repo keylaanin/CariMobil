@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -245,17 +245,27 @@
               </div>
             </div>
 
-            <form class="contact-form">
-              <input type="text" placeholder="Nama kamu" />
-              <input type="email" placeholder="Email kamu" />
+            <form class="contact-form" id="contact-form">
+              <input type="text" name="user_name" id="from_name" placeholder="Nama kamu" required />
+              <input type="email" name="user_email" id="reply_to" placeholder="Email kamu" required />
               <textarea
+                name="message"
+                id="message"
                 placeholder="Tanya soal mobil apa? Atau tinggalkan pesan..."
                 rows="11"
+                required
               ></textarea>
-              <button type="submit" class="btn-primary btn-large btn-full">
+              <button type="submit" id="btn-submit" class="btn-primary btn-large btn-full">
                 Kirim Pesan
               </button>
             </form>
+
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            <script type="text/javascript">
+               (function(){
+                  emailjs.init("hJHpbBp2iMWeW0vgD");
+               })();
+            </script>
           </div>
         </div>
       </section>
@@ -297,6 +307,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="script.js"></script>
     <script src="sample.js"></script>
